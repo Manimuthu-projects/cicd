@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('manimuthu-dockerhub')
+    DOCKERHUB_CREDENTIALS = credentials('cicidsample')
     }
     stages { 
 
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push ylmt/flaskapp:$BUILD_NUMBER'
+                sh 'docker push manimuthu2627/flaskapp:$BUILD_NUMBER'
             }
         }
 }
